@@ -1,0 +1,68 @@
+.containerr{
+  
+    background-image: url("https://i.hizliresim.com/5mc8jaq.jpg");
+ 
+}
+.image{
+    margin-left: -15px;
+    height: auto;
+    width: auto;
+}
+
+label{
+    font-size: 20px;
+    font-family: cursive;
+}
+input{
+    margin-top: 6px;
+    min-height: 3em;
+    height: 20px;
+    width: 21em;
+    padding: 0px 10px;
+    font-size: 16px;
+    font-family: cursive;;
+    background-color:#D0FCFD;
+    border: 0;
+    border-radius: 4px;
+    margin-bottom: 31px;
+    transition: all 250ms ease-in-out;
+}
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 12px 0.8px #0e81ce96;
+}
+.buttonRegister{
+    background-color:rgb(244, 220, 246);
+    padding:20px;
+    height: 60px;
+    width: 120px;
+    font-size: 20px;
+    color: black;
+    border-radius: 10px 100px / 120px;
+    text-decoration: none; 
+    margin-left: 80px;
+    
+}
+
+.buttonLogin{
+    background-color:rgb(244, 220, 246);
+    border-radius: 10px 100px / 120px;
+    margin-left: 50px;
+    padding: 20px;
+    height:60px;
+    width: 120px;
+    font-size: 20px;
+    color: black;   
+    text-decoration: none; 
+
+    }
+    @media (max-width:1250px)
+    {
+       .img{
+           width: 400px;
+           height: 300px;
+          }
+       .buttonRegisterr{
+           margin-left: 10px;
+       }
+    }    
