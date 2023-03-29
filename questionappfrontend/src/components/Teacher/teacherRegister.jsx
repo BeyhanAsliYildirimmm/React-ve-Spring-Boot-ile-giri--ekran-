@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import teacherService from "../Service/teacher.service";
 import './teacherStyle.css'
 import Navbar from '../Navbar/Navbar';
 
 const SingUpTeacher = () =>{
-
+ 
+   const navigate = useNavigate();
    const [teacher,setTeacher]=useState({
         fistName: "",
         lastName: "",
@@ -23,23 +24,20 @@ const SingUpTeacher = () =>{
             console.log(teacher);
             e.preventDefault();
             teacherService.saveTeacher(teacher);
+            navigate('/singInTeacher');
     };
     return(
         <>
         <Navbar></Navbar>
         <div className="containerr">
             <div className="row">
+            <video src='/videos/back.mp4' autoPlay loop muted />
                 <div className="col-md-6 offset-md-3"> 
                     <div className="card">
-                            <div className="card-header text-center fs-3">
-                                <div className='image  text-center'>
-                                    <img className='img' src="simge.jpg" />
-                                </div>
-                            </div>
                         <div className="card-body">
                             <form onSubmit={(e) => submitTeacher(e)}>
                                 <div className="mb-3">
-                                    <label>Ad</label>
+                                    <label id='name'>Ad</label>
                                     <input
                                     type="text"
                                     className="form-control"
@@ -49,7 +47,7 @@ const SingUpTeacher = () =>{
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label>Soyad</label>
+                                    <label id='lastname'>Soyad</label>
                                     <input
                                     type="text"
                                     className="form-control"
@@ -59,7 +57,7 @@ const SingUpTeacher = () =>{
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label>Branş</label>
+                                    <label id='brans'>Branş</label>
                                     <input
                                     type="text"
                                     className="form-control"
@@ -69,7 +67,7 @@ const SingUpTeacher = () =>{
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label>Email</label>
+                                    <label id='email'>Email</label>
                                     <input
                                     type="text"
                                     className="form-control"
@@ -79,7 +77,7 @@ const SingUpTeacher = () =>{
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label>Şifre</label>
+                                    <label id='password'>Şifre</label>
                                     <input
                                     type="password"
                                     className="form-control"
@@ -88,7 +86,6 @@ const SingUpTeacher = () =>{
                                     onChange={(e)=>handleChangee(e)}                                
                                     />
                                 </div>
-                                
                                     <button type='submit' className="buttonRegister">Sing Up</button>
                                     <Link to="/singInTeacher"  className="buttonLogin">Sing In</Link>
                                 

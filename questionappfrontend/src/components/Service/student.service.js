@@ -1,26 +1,22 @@
 import axios from "axios";
+
 const BASE_API_URL="http://localhost:8080/student";
+
 class StudentService{
-    
+ 
     saveStudent(student){
-      return axios.post(BASE_API_URL+"/save",student);
+     
+     const response= axios.post(BASE_API_URL+"/save",student)
+     .then(res =>  res.status === 201 ? true : false)
+     .catch(err => false);
+     return response;
     }
     async loginStudent(email,password){
 
-      console.log(email);
-      console.log(password);
-     const response= await axios.get(BASE_API_URL+"/login/"+email+"/"+password);
-    
-      if(response.data==1){
-
-        alert('Tebrikler')
-
-        }
-        else if(response.data==0){
-
-         alert("Böyle Bir Kullanıcı Bulunamadı.")
-
-        } 
+      const response = await axios.get(BASE_API_URL+"/login/"+email+"/"+password)
+      .then(res =>  res.data === 1 ? true : false)
+      .catch(err => false);
+      return response;
   }
 
     getAllStudent(){

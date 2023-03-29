@@ -6,30 +6,32 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import "./Timeline.css"
-const CostomTimeline  = () => {
+import { Typography } from "@material-ui/core";
+
+const CostomTimeline  = ({title,icon,children}) => {
     return(
-        <Timeline>
-      <TimelineItem>
+        <Timeline className={"timeline"}>
+          {/* Item Header */}
+      <TimelineItem className={"timeline_firstItem"}>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot className={"timeline_dot_header"}>
+            {icon}
+          </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Eat</TimelineContent>
+        <TimelineContent><Typography variant="h6" className={"timeline_header"}>
+          {title}
+          </Typography>
+          </TimelineContent>
       </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-    </Timeline>
-    )
-}
+       {children}
+       </Timeline>
+    );
+};
+export const CustomerTimelineSeparator = () =>(
+  <TimelineSeparator className="separator_padding">
+  <TimelineDot variant={"outlined"} className={"timeline_dot"} />
+  <TimelineConnector />
+  </TimelineSeparator>
+);
 export default CostomTimeline;

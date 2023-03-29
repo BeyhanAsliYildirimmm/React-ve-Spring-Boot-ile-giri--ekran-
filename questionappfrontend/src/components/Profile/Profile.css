@@ -1,12 +1,23 @@
+.full_profile{
+    background-color: #D0FCFD;
+    width: 400px;
+    margin-top: 50px;
+    margin-left:30px;
+    margin-bottom: 10px;
+    border-radius: 10px 100px / 120px;
+    color: black;
+   
+}
+
 .pofile{
-    background-color: white;
+   
     border-radius: 6px;
-    width: 100%;
     display: inline-block;
 }
 .profile_name{
     line-height: 18px;
     padding: 20px;
+    margin-left: 30px;
 }
 
 .profile_name .name {
@@ -20,9 +31,20 @@
 }
 .profile_image{
     margin-top: -10px;
-    width: 200px;
-    height: 300px;
+    margin-left: 30px;
+    width: 50%;
+    height:50%;
 }
 .profile_image img{
     width: 100%;
+    height: 100%;
+   
+}
+.profile_information {
+    width: 50%;
+
+}
+.profile_information .button{
+    margin-left: 70px;
+    margin-bottom: 20px;
 }
