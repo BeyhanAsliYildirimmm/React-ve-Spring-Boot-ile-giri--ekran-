@@ -1,35 +1,37 @@
 .timeline {
-padding: 0px ;
+padding: 0 !important;
 }
 
 /* Header */
-.timeline .timeline_dot_header{
-padding-top: 7px;
+.timeline .timeline_header{
+    padding-top: 7px;
 }
+
 .timeline .timeline_firstItem{
     min-height: 80px !important;
 }
 .timeline .MuiTimelineItem-root{
     min-height: 0px;
 }
-.timeline .MuiTimelineItem-missingOppositeContent::before{
+.timeline .MuiTimelineItem-missingOppositeContent:before{
     display: none;
 }
 .timeline .timeline_dot_header{
-    color: black;
+    color: black !important;
     background-color: var(--main-color) !important;
     font-size: small !important;
-    padding: 10px !important;
+    padding: 2px !important;
 }
 /* Remaining Items */
 
 .timeline .timeline_dot{
     color:black !important;
     border-color: var(--main-color) !important;
-    padding:  2px !important;
+    padding:2px !important;
+    font-size: small !important;
 }
 .timeline .MuiTimelineConnector-root{
-    background-color: rgb(244, 220, 246) !important ; 
+    background-color: white !important ; 
 }
 .timeline .timeline_dot_header> .MuiSvgIcon-root
    { 
@@ -38,7 +40,7 @@ padding-top: 7px;
 }
 
 .timeline .separator_padding{
-    padding-left: 18px !important;
+    padding-left: 10px !important;
 
 }
 .timeline .timeline_content{
